@@ -7,7 +7,7 @@ const filePath = process.argv[3];
 const fetcher = (url, filePath) => {
   request(url, (error, response, body) => {
     if (error) {
-      console.error('Error:' error);
+      console.error('Error:', error);
       return;
     }
     if (response.statusCode !== 200) {
@@ -34,3 +34,6 @@ const fetcher = (url, filePath) => {
 };
 
 fetcher(url, filePath);
+
+//Run:
+//> node fetcher.js http://www.example.edu/ ./index.html
